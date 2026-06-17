@@ -1,12 +1,17 @@
+"""
+Exemplo de tratamento de exceções (Try/Except).
+Demonstra como capturar erros específicos e genéricos.
+"""
 
 lista = [1, 20]
+
 try:
-    divisao = 10 / 0
-    numero = lista[1]
-    x = 1
-# except ZeroDivisionError:
-#     print("Não é possível realizar uma divisão por 0")
-# except IndexError:
-#     print('Erro de indíce')
+    divisao = 10 / 2
+    numero = lista[1]  # Acessando índice existente
+    print(f"Resultado da divisão: {divisao}")
+except ZeroDivisionError:
+    print("Erro: Não é possível realizar uma divisão por zero.")
+except IndexError:
+    print("Erro: O índice acessado não existe na lista.")
 except BaseException as ex:
-    print('Erro desconhecido. Erro {}' .format(ex))
+    print(f"Erro inesperado: {ex}")
